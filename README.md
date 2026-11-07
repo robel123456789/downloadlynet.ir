@@ -93,27 +93,6 @@ Supported subtitle formats include:
 
 FFmpeg is required for subtitle merging.
 
-## 📦 RAR Extraction
-
-The extraction helper supports:
-
-- Standard `.rar` archives.
-- Multipart `.part1.rar` archives.
-- Legacy `.r00`, `.r01` archive sets.
-
-You can perform a preview using:
-
-```powershell
-python extract_course_rars.py "C:\Courses" --dry-run
-```
-
-To extract:
-
-```powershell
-python extract_course_rars.py "C:\Courses"
-```
-
-Archive deletion is optional. Do not enable deletion until you have verified the extracted files.
 
 ## 🔧 Troubleshooting
 
