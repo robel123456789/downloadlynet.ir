@@ -142,29 +142,6 @@ Archive deletion is optional. Do not enable deletion until you have verified the
 - Check that all archive parts are present.
 - Make sure you have sufficient disk space.
 
-## 🔐 Security
-
-- Review source code before installation.
-- Do not run unknown scripts as administrator.
-- Back up course files before processing.
-- Avoid deleting original archives until extraction is verified.
-- Only use course content that you are legally authorized to access.
-
-## ⚖️ Copyright and Disclaimer
-
-This project is intended for organizing and playing legally obtained local educational content.
-
-This repository is not affiliated with or endorsed by Udemy.
-
-Do not upload copyrighted course videos, unauthorized course downloads, proprietary assets, or other material without permission.
-
-The original software's ownership and redistribution permissions must be verified before publishing its source code.
-
-## 🤝 Contributions
-
-Contributions are welcome if you have permission to modify and distribute the relevant project components.
-
-Please submit improvements through GitHub Issues and Pull Requests.
 
 ## 📌 Version
 
