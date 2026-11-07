@@ -1,0 +1,189 @@
+#cx-sky,#cx-aurora{display:none}
+/* ═══════════════════════════════════════════════════════════════
+   COSMIC GLASS — shared by planner, library, player and popup.
+   Loaded LAST so it layers on top of app.css / theme.css / ui.css.
+   Everything is driven by variables, so the theme toggle still works.
+   ═══════════════════════════════════════════════════════════════ */
+
+html[data-theme="cosmic"]{
+  --cx-violet:var(--zd-acc,#7c5cff);--cx-cyan:var(--zd-acc2,#38e1ff);--cx-pink:var(--zd-acc3,#ff5fd2);--cx-gold:#ffd27a;
+  --cx-glass:rgba(18,16,42,.42);
+  --cx-glass-hi:rgba(28,24,64,.58);
+  --cx-edge:rgba(170,150,255,.20);
+  --cx-edge-hi:rgba(190,175,255,.38);
+  --cx-shine:rgba(255,255,255,.10);
+  --cx-blur:22px;
+  --cx-glow:0 0 0 1px rgba(var(--zd-acc-rgb,124,92,255),.10),0 10px 40px rgba(6,4,24,.55),0 0 38px rgba(var(--zd-acc-rgb,124,92,255),.10);
+}
+
+/* ── deep-space backdrop ───────────────────────────────────────── */
+html[data-theme="cosmic"]{
+  background:
+    radial-gradient(1200px 700px at 12% -8%,rgba(var(--zd-acc-rgb,124,92,255),.30),transparent 60%),
+    radial-gradient(900px 620px at 92% 8%,rgba(var(--zd-acc2-rgb,56,225,255),.17),transparent 58%),
+    radial-gradient(1100px 760px at 70% 108%,rgba(var(--zd-acc3-rgb,255,95,210),.18),transparent 60%),
+    radial-gradient(800px 600px at 0% 100%,rgba(60,90,255,.16),transparent 60%),
+    linear-gradient(180deg,#05040f 0%,#080616 55%,#04030c 100%)!important;
+  background-color:#04030d!important;background-attachment:fixed!important;
+}
+html[data-theme="cosmic"] body{background:transparent!important;color:var(--text-primary,var(--text,#eeeeff))}
+html[data-theme="cosmic"] #cx-sky{position:fixed;inset:0;width:100%;height:100%;z-index:-2;pointer-events:none;display:block}
+html[data-theme="cosmic"] #cx-aurora{position:fixed;inset:-20%;z-index:-1;pointer-events:none;opacity:.55;
+  background:
+    conic-gradient(from 210deg at 30% 40%,transparent 0 55%,rgba(var(--zd-acc-rgb,124,92,255),.20) 62%,transparent 72%),
+    conic-gradient(from 20deg at 78% 62%,transparent 0 50%,rgba(var(--zd-acc2-rgb,56,225,255),.14) 60%,transparent 70%);
+  filter:blur(60px);animation:cx-drift 38s ease-in-out infinite alternate}
+@keyframes cx-drift{from{transform:translate3d(-2%,-1%,0) rotate(0deg) scale(1)}to{transform:translate3d(3%,2%,0) rotate(6deg) scale(1.08)}}
+
+/* ── make the old solid surfaces translucent so glass can show ─── */
+html[data-theme="cosmic"]{
+  --bg:transparent;--surface:var(--cx-glass);--card:rgba(30,26,70,.38);--card2:rgba(60,50,130,.34);
+  --border:var(--cx-edge);--border2:var(--cx-edge-hi);--line:var(--cx-edge);
+  --accent:var(--zd-acc,#8f78ff);--glow:rgba(var(--zd-acc-rgb,124,92,255),.55);--ac:var(--zd-acc,#8f78ff);
+  --muted:#9a95c8;--mu:#a9a4d6;--text:#f1efff;--tx:#f1efff;
+  --bg-base:transparent;--bg-elevated:var(--cx-glass);--bg-surface:rgba(30,26,70,.36);--bg-surface-2:rgba(70,58,150,.38);
+  --border-default:var(--cx-edge);--border-strong:var(--cx-edge-hi);
+  --glass-bg:var(--cx-glass);--glass-bg-strong:var(--cx-glass-hi);--glass-border:var(--cx-edge);
+  --glass-highlight:var(--cx-shine);--glass-blur:var(--cx-blur);
+  --glass-shadow:0 10px 40px rgba(6,4,24,.55);
+  --hover:rgba(var(--zd-acc-rgb,160,140,255),.12);--scrim:rgba(4,3,14,.72);--ring-color:rgba(var(--zd-acc-rgb,160,140,255),.55);
+  --btn-primary-bg:linear-gradient(135deg,var(--zd-acc,#8f78ff),var(--zd-acc2,#38e1ff));--btn-primary-text:var(--zd-onacc,#07051a);--btn-primary-bg-hover:linear-gradient(135deg,var(--zd-acc,#a590ff),#6aeaff);
+  --text-primary:#f1efff;--text-secondary:#c3bfe6;--text-muted:#8c88b8;
+}
+
+/* ── the glass recipe ──────────────────────────────────────────── */
+html[data-theme="cosmic"] .left,html[data-theme="cosmic"] .right,html[data-theme="cosmic"] .nav,html[data-theme="cosmic"] .nav-tabs,html[data-theme="cosmic"] #aside,html[data-theme="cosmic"] .ntpop,html[data-theme="cosmic"] .modal .mbox,html[data-theme="cosmic"] .mbox,html[data-theme="cosmic"] .mpop,html[data-theme="cosmic"] .pop,html[data-theme="cosmic"] .menu,html[data-theme="cosmic"] .card,html[data-theme="cosmic"] .ccard,html[data-theme="cosmic"] .wcard,html[data-theme="cosmic"] .panel,html[data-theme="cosmic"] .stat,html[data-theme="cosmic"] .a-card,html[data-theme="cosmic"] .day-card,html[data-theme="cosmic"] .note-card,html[data-theme="cosmic"] .task-item,html[data-theme="cosmic"] .dtask-item,html[data-theme="cosmic"] .log-entry,html[data-theme="cosmic"] .fa-card,html[data-theme="cosmic"] .fa-hero,html[data-theme="cosmic"] .fa-tile,html[data-theme="cosmic"] .fa-dlg-box,html[data-theme="cosmic"] .fa-modal,html[data-theme="cosmic"] .alarm-box,html[data-theme="cosmic"] .alarm-modal,html[data-theme="cosmic"] .pl-item,html[data-theme="cosmic"] .pp-item,html[data-theme="cosmic"] .mg-sum,html[data-theme="cosmic"] .mg-log,html[data-theme="cosmic"] .mg-opts,html[data-theme="cosmic"] .tasks li,html[data-theme="cosmic"] #ft,html[data-theme="cosmic"] .year-table-wrap,html[data-theme="cosmic"] .chart-wrap,html[data-theme="cosmic"] .drop-zone,html[data-theme="cosmic"] .timer-wrap,html[data-theme="cosmic"] .setting-row,html[data-theme="cosmic"] .upnext,html[data-theme="cosmic"] .lec,html[data-theme="cosmic"] .box,html[data-theme="cosmic"] .sech{
+  background-color:var(--cx-glass)!important;
+  background-image:linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,0) 42%)!important;
+  -webkit-backdrop-filter:blur(var(--cx-blur)) saturate(170%);
+  backdrop-filter:blur(var(--cx-blur)) saturate(170%);
+  border-color:var(--cx-edge)!important;
+  box-shadow:inset 0 1px 0 var(--cx-shine),var(--cx-glow);
+}
+/* second tier: inner items – lighter so nesting never turns to mud */
+html[data-theme="cosmic"] .task-item,html[data-theme="cosmic"] .dtask-item,html[data-theme="cosmic"] .log-entry,html[data-theme="cosmic"] .pl-item,html[data-theme="cosmic"] .pp-item,html[data-theme="cosmic"] .tasks li,html[data-theme="cosmic"] .fa-tile,html[data-theme="cosmic"] .setting-row,html[data-theme="cosmic"] .lec,html[data-theme="cosmic"] .stat,html[data-theme="cosmic"] .a-card,html[data-theme="cosmic"] .note-card,html[data-theme="cosmic"] .day-card{
+  background-color:var(--zd-inner,rgba(36,30,86,.32))!important;
+  -webkit-backdrop-filter:blur(12px) saturate(150%);backdrop-filter:blur(12px) saturate(150%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 4px 18px rgba(4,3,18,.35);
+  transition:transform .25s cubic-bezier(.2,.8,.2,1),border-color .25s,box-shadow .25s,background-color .25s;
+}
+html[data-theme="cosmic"] .task-item:hover,html[data-theme="cosmic"] .dtask-item:hover,html[data-theme="cosmic"] .log-entry:hover,html[data-theme="cosmic"] .pl-item:hover,html[data-theme="cosmic"] .fa-card:hover,html[data-theme="cosmic"] .note-card:hover,html[data-theme="cosmic"] .ccard:hover,html[data-theme="cosmic"] .day-card:hover,html[data-theme="cosmic"] .a-card:hover,html[data-theme="cosmic"] .stat:hover{
+  transform:translateY(-2px);
+  border-color:var(--cx-edge-hi)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 12px 34px rgba(4,3,18,.55),0 0 28px rgba(var(--zd-acc-rgb,124,92,255),.22);
+}
+html[data-theme="cosmic"] .ntpop,html[data-theme="cosmic"] .mbox,html[data-theme="cosmic"] .mpop,html[data-theme="cosmic"] .pop,html[data-theme="cosmic"] .menu,html[data-theme="cosmic"] .fa-dlg-box,html[data-theme="cosmic"] .fa-modal,html[data-theme="cosmic"] .alarm-box,html[data-theme="cosmic"] .alarm-modal{
+  background-color:var(--cx-glass-hi)!important;
+  -webkit-backdrop-filter:blur(34px) saturate(190%);backdrop-filter:blur(34px) saturate(190%);
+  border:1px solid var(--cx-edge-hi);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.14),0 24px 80px rgba(2,1,14,.75),0 0 60px rgba(var(--zd-acc-rgb,124,92,255),.18);
+}
+html[data-theme="cosmic"] .modal,html[data-theme="cosmic"] .modal-bg,html[data-theme="cosmic"] .alarm-overlay{-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+html[data-theme="cosmic"] .left,html[data-theme="cosmic"] #aside{border-right-color:var(--cx-edge)!important}
+html[data-theme="cosmic"] .nav,html[data-theme="cosmic"] .nav-tabs{background-color:var(--zd-nav,rgba(10,8,28,.50))!important;border-bottom:1px solid var(--cx-edge)!important;
+  -webkit-backdrop-filter:blur(26px) saturate(180%);backdrop-filter:blur(26px) saturate(180%);box-shadow:0 1px 0 var(--cx-shine) inset,0 10px 40px rgba(2,1,14,.45)}
+
+/* ── tabs ──────────────────────────────────────────────────────── */
+html[data-theme="cosmic"] .nav-tab{border-radius:12px 12px 0 0;letter-spacing:1.4px}
+html[data-theme="cosmic"] .nav-tab:hover{color:#fff;background:rgba(var(--zd-acc-rgb,160,140,255),.10)}
+html[data-theme="cosmic"] .nav-tab.active{background:linear-gradient(180deg,rgba(var(--zd-acc-rgb,124,92,255),.30),rgba(var(--zd-acc-rgb,124,92,255),.08))!important;
+  color:#fff!important;border-color:var(--cx-edge-hi)!important;text-shadow:0 0 14px rgba(var(--zd-acc-rgb,160,140,255),.9);
+  box-shadow:0 -6px 22px rgba(var(--zd-acc-rgb,124,92,255),.22) inset}
+
+/* ── buttons / inputs / pills ─────────────────────────────────── */
+html[data-theme="cosmic"] .btn,html[data-theme="cosmic"] .hbtn,html[data-theme="cosmic"] .set-btn,html[data-theme="cosmic"] .add-btn,html[data-theme="cosmic"] .ib,html[data-theme="cosmic"] .pill,html[data-theme="cosmic"] .chip,html[data-theme="cosmic"] .seg-btn,html[data-theme="cosmic"] .ntbtn,html[data-theme="cosmic"] .themebtn,html[data-theme="cosmic"] .pl-btn,html[data-theme="cosmic"] .rbtn,html[data-theme="cosmic"] .year-nav-btn,html[data-theme="cosmic"] button.ghost{
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+}
+html[data-theme="cosmic"] .btn,html[data-theme="cosmic"] .hbtn,html[data-theme="cosmic"] .pill,html[data-theme="cosmic"] .chip,html[data-theme="cosmic"] .ntbtn,html[data-theme="cosmic"] .seg-btn,html[data-theme="cosmic"] .year-nav-btn{background-color:rgba(var(--zd-acc-rgb,150,130,255),.08);border-color:var(--cx-edge)}
+html[data-theme="cosmic"] .btn:hover,html[data-theme="cosmic"] .hbtn:hover,html[data-theme="cosmic"] .pill:hover,html[data-theme="cosmic"] .chip:hover,html[data-theme="cosmic"] .ntbtn:hover,html[data-theme="cosmic"] .seg-btn:hover{background-color:rgba(var(--zd-acc-rgb,160,140,255),.18);border-color:var(--cx-edge-hi);box-shadow:0 0 22px rgba(var(--zd-acc-rgb,124,92,255),.30)}
+html[data-theme="cosmic"] .btn.primary,html[data-theme="cosmic"] .btn.primary:hover,html[data-theme="cosmic"] .set-btn,html[data-theme="cosmic"] .add-btn,html[data-theme="cosmic"] .pill.active,html[data-theme="cosmic"] .seg-btn.on,html[data-theme="cosmic"] .seg-btn.active,html[data-theme="cosmic"] .nav.t-run #timBtn,html[data-theme="cosmic"] #open{
+  background-image:linear-gradient(135deg,var(--zd-acc,#8f78ff) 0%,var(--zd-accmid,#5b8bff) 55%,var(--zd-acc2,#38e1ff) 100%)!important;
+  color:var(--zd-onacc,#07051a)!important;border-color:transparent!important;font-weight:700;
+  box-shadow:0 6px 24px rgba(var(--zd-acc-rgb,124,92,255),.50),inset 0 1px 0 rgba(255,255,255,.45);
+}
+html[data-theme="cosmic"] .btn.primary:hover,html[data-theme="cosmic"] .set-btn:hover,html[data-theme="cosmic"] .add-btn:hover,html[data-theme="cosmic"] .pill.active:hover{filter:brightness(1.12) saturate(1.1);transform:translateY(-1px);box-shadow:0 10px 34px rgba(var(--zd-acc-rgb,124,92,255),.65),inset 0 1px 0 rgba(255,255,255,.55)}
+html[data-theme="cosmic"] .btn:active,html[data-theme="cosmic"] .pill:active,html[data-theme="cosmic"] .set-btn:active{transform:translateY(0) scale(.98)}
+html[data-theme="cosmic"] input,html[data-theme="cosmic"] textarea,html[data-theme="cosmic"] select,html[data-theme="cosmic"] .inp,html[data-theme="cosmic"] .sinput,html[data-theme="cosmic"] .search,html[data-theme="cosmic"] .p-select,html[data-theme="cosmic"] .setting-input,html[data-theme="cosmic"] .notes-search,html[data-theme="cosmic"] .fa-field input{
+  background-color:var(--zd-input,rgba(10,8,30,.45))!important;color:var(--text-primary,#f1efff);
+  border:1px solid var(--cx-edge)!important;
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+  transition:border-color .2s,box-shadow .2s,background-color .2s;
+}
+html[data-theme="cosmic"] input:focus,html[data-theme="cosmic"] textarea:focus,html[data-theme="cosmic"] select:focus,html[data-theme="cosmic"] .search:focus-within,html[data-theme="cosmic"] .inp:focus{
+  border-color:var(--cx-violet)!important;box-shadow:0 0 0 3px rgba(var(--zd-acc-rgb,124,92,255),.25),0 0 28px rgba(var(--zd-acc-rgb,124,92,255),.30)!important;background-color:var(--zd-input-focus,rgba(18,14,50,.6))!important}
+html[data-theme="cosmic"] ::placeholder{color:rgba(190,185,235,.45)}
+html[data-theme="cosmic"] .toggle,html[data-theme="cosmic"] .vol,html[data-theme="cosmic"] input[type=range]{accent-color:var(--cx-violet)}
+
+/* ── headings, labels, glow type ─────────────────────────────── */
+html[data-theme="cosmic"] .sec-label,html[data-theme="cosmic"] .app-title,html[data-theme="cosmic"] .chart-title,html[data-theme="cosmic"] .daily-title{
+  background:linear-gradient(90deg,var(--zd-t1,#c9bcff),var(--zd-t2,#7fe9ff) 60%,var(--zd-t3,#ffb3ec));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  filter:drop-shadow(0 0 10px rgba(var(--zd-acc-rgb,124,92,255),.45))}
+html[data-theme="cosmic"] .sec-label::after{background:linear-gradient(90deg,var(--cx-edge-hi),transparent)}
+html[data-theme="cosmic"] .h2,html[data-theme="cosmic"] .tp-h,html[data-theme="cosmic"] .brand{text-shadow:0 0 28px rgba(var(--zd-acc-rgb,150,130,255),.35)}
+html[data-theme="cosmic"] .brand span{background:linear-gradient(90deg,var(--zd-acc,#8f78ff),var(--zd-acc2,#38e1ff));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+html[data-theme="cosmic"] .timer-digits,html[data-theme="cosmic"] .tp-big,html[data-theme="cosmic"] .fa-cd,html[data-theme="cosmic"] .date-txt,html[data-theme="cosmic"] #ft b,html[data-theme="cosmic"] #date{
+  text-shadow:0 0 18px rgba(var(--zd-acc-rgb,143,120,255),.75),0 0 46px rgba(var(--zd-acc2-rgb,56,225,255),.35)}
+
+/* ── timer ring = planetary orbit ────────────────────────────── */
+html[data-theme="cosmic"] .ring-stage{filter:drop-shadow(0 0 22px rgba(var(--zd-acc-rgb,124,92,255),.45))}
+html[data-theme="cosmic"] .ring-stage::before{content:"";position:absolute;inset:-14px;border-radius:50%;
+  background:radial-gradient(circle,rgba(var(--zd-acc-rgb,124,92,255),.22) 0%,rgba(var(--zd-acc2-rgb,56,225,255),.06) 55%,transparent 70%);
+  animation:cx-breathe 6s ease-in-out infinite;pointer-events:none}
+html[data-theme="cosmic"] .ring-stage::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:1px dashed rgba(var(--zd-acc-rgb,160,140,255),.28);
+  animation:cx-spin 70s linear infinite;pointer-events:none}
+@keyframes cx-spin{to{transform:rotate(360deg)}}
+@keyframes cx-breathe{0%,100%{transform:scale(.96);opacity:.7}50%{transform:scale(1.06);opacity:1}}
+html[data-theme="cosmic"] .ring-bg{stroke:rgba(var(--zd-acc-rgb,150,130,255),.10)!important}
+html[data-theme="cosmic"] .ring-track{stroke:rgba(var(--zd-acc-rgb,150,130,255),.22)!important}
+html[data-theme="cosmic"] .ring-prog{stroke:url(#cx-grad)!important;filter:drop-shadow(0 0 8px rgba(var(--zd-acc-rgb,124,92,255),.95)) drop-shadow(0 0 18px rgba(var(--zd-acc2-rgb,56,225,255),.55))}
+html[data-theme="cosmic"] .ring-pulse{stroke:rgba(var(--zd-acc-rgb,124,92,255),.35)!important}
+html[data-theme="cosmic"] .focus-mode-ring{background:radial-gradient(ellipse at center,rgba(20,14,60,.78),rgba(2,1,10,.94))!important;
+  -webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)}
+html[data-theme="cosmic"] .pomo-bar,html[data-theme="cosmic"] .prog,html[data-theme="cosmic"] .pbar{background:rgba(var(--zd-acc-rgb,150,130,255),.14)!important;border-radius:99px;overflow:hidden}
+html[data-theme="cosmic"] .pomo-fill,html[data-theme="cosmic"] .prog i,html[data-theme="cosmic"] .pbar>*{background:linear-gradient(90deg,var(--zd-acc,#8f78ff),var(--zd-acc2,#38e1ff),var(--zd-acc3,#ff5fd2))!important;box-shadow:0 0 14px rgba(var(--zd-acc-rgb,124,92,255),.8)}
+html[data-theme="cosmic"] .bar-fill,html[data-theme="cosmic"] .day-fill{background:linear-gradient(180deg,var(--zd-acc2,#38e1ff),var(--zd-acc,#7c5cff))!important;box-shadow:0 0 14px rgba(var(--zd-acc-rgb,124,92,255),.6)}
+
+/* ── checkboxes, badges, priority ─────────────────────────────── */
+html[data-theme="cosmic"] .task-check:checked,html[data-theme="cosmic"] .dtask-check:checked{box-shadow:0 0 12px rgba(var(--zd-ok-rgb,0,245,180),.7)}
+html[data-theme="cosmic"] .badge-focus,html[data-theme="cosmic"] .badge-idea,html[data-theme="cosmic"] .badge-todo,html[data-theme="cosmic"] .badge-reflect,html[data-theme="cosmic"] .note-cat-badge,html[data-theme="cosmic"] .sdot,html[data-theme="cosmic"] .streak-dot{box-shadow:0 0 12px currentColor}
+html[data-theme="cosmic"] .p-high{box-shadow:inset 3px 0 0 var(--red,var(--zd-err,#ff5f72))}
+
+/* ── library / player specifics ───────────────────────────────── */
+html[data-theme="cosmic"] .ccard,html[data-theme="cosmic"] .wcard{overflow:hidden;border-radius:20px}
+html[data-theme="cosmic"] .ccard .cover{transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+html[data-theme="cosmic"] .ccard:hover .cover{transform:scale(1.06)}
+html[data-theme="cosmic"] .cat,html[data-theme="cosmic"] .navlink{border-radius:12px;transition:all .2s}
+html[data-theme="cosmic"] .cat:hover,html[data-theme="cosmic"] .navlink:hover{background:rgba(var(--zd-acc-rgb,160,140,255),.12)}
+html[data-theme="cosmic"] .cat.on,html[data-theme="cosmic"] .cat.active,html[data-theme="cosmic"] .navlink.on{background:linear-gradient(90deg,rgba(var(--zd-acc-rgb,124,92,255),.32),rgba(var(--zd-acc-rgb,124,92,255),.04))!important;box-shadow:inset 2px 0 0 var(--cx-violet),0 0 24px rgba(var(--zd-acc-rgb,124,92,255),.18)}
+html[data-theme="cosmic"] #stage,html[data-theme="cosmic"] #vw,html[data-theme="cosmic"] .vw,html[data-theme="cosmic"] .stage,html[data-theme="cosmic"] video{border-radius:16px}
+html[data-theme="cosmic"] #stage,html[data-theme="cosmic"] #vw{box-shadow:0 0 0 1px var(--cx-edge-hi),0 30px 90px rgba(2,1,14,.8),0 0 80px rgba(var(--zd-acc-rgb,124,92,255),.22)}
+html[data-theme="cosmic"] .lec:hover,html[data-theme="cosmic"] .cue:hover{background:rgba(var(--zd-acc-rgb,160,140,255),.14)!important}
+html[data-theme="cosmic"] .lec.on,html[data-theme="cosmic"] .lec.active,html[data-theme="cosmic"] .cue.on,html[data-theme="cosmic"] .cue.active{background:linear-gradient(90deg,rgba(var(--zd-acc-rgb,124,92,255),.30),transparent)!important;box-shadow:inset 2px 0 0 var(--cx-cyan)}
+html[data-theme="cosmic"] .toast{background:var(--cx-glass-hi)!important;border:1px solid var(--cx-edge-hi);-webkit-backdrop-filter:blur(24px);backdrop-filter:blur(24px);box-shadow:0 14px 50px rgba(2,1,14,.7),0 0 34px rgba(var(--zd-acc-rgb,124,92,255),.35)}
+
+/* ── popup (tiny window) ──────────────────────────────────────── */
+html[data-theme="cosmic"] body:not(.lib):not(.app) .tasks{position:relative;z-index:1}
+html[data-theme="cosmic"] #ft{border-radius:18px}
+
+/* ── scrollbars ───────────────────────────────────────────────── */
+html[data-theme="cosmic"] ::-webkit-scrollbar{width:7px;height:7px}
+html[data-theme="cosmic"] ::-webkit-scrollbar-track{background:transparent}
+html[data-theme="cosmic"] ::-webkit-scrollbar-thumb{background:linear-gradient(180deg,rgba(var(--zd-acc-rgb,143,120,255),.55),rgba(var(--zd-acc2-rgb,56,225,255),.40));border-radius:99px;border:2px solid transparent;background-clip:padding-box}
+html[data-theme="cosmic"] ::-webkit-scrollbar-thumb:hover{background:linear-gradient(180deg,var(--zd-acc,#8f78ff),var(--zd-acc2,#38e1ff));background-clip:padding-box}
+html[data-theme="cosmic"] ::selection{background:rgba(var(--zd-acc-rgb,124,92,255),.55);color:#fff}
+
+/* ── entrance choreography ────────────────────────────────────── */
+@keyframes cx-rise{from{opacity:0;transform:translateY(14px) scale(.985)}to{opacity:1;transform:none}}
+html[data-theme="cosmic"] .tab-pane.active>*,html[data-theme="cosmic"] .lib-wrap>*,html[data-theme="cosmic"] .fa-list>*,html[data-theme="cosmic"] .notes-grid>*,html[data-theme="cosmic"] .task-list>*{animation:cx-rise .55s cubic-bezier(.2,.8,.2,1) both}
+html[data-theme="cosmic"] .lib-wrap>*:nth-child(2),html[data-theme="cosmic"] .notes-grid>*:nth-child(2),html[data-theme="cosmic"] .task-list>*:nth-child(2){animation-delay:.05s}
+html[data-theme="cosmic"] .lib-wrap>*:nth-child(3),html[data-theme="cosmic"] .notes-grid>*:nth-child(3),html[data-theme="cosmic"] .task-list>*:nth-child(3){animation-delay:.10s}
+html[data-theme="cosmic"] .lib-wrap>*:nth-child(4),html[data-theme="cosmic"] .notes-grid>*:nth-child(4),html[data-theme="cosmic"] .task-list>*:nth-child(4){animation-delay:.15s}
+html[data-theme="cosmic"] .lib-wrap>*:nth-child(n+5),html[data-theme="cosmic"] .notes-grid>*:nth-child(n+5){animation-delay:.2s}
+
+/* ── respect reduced-motion + low-power devices ───────────────── */
+@media (prefers-reduced-motion:reduce){
+  html[data-theme="cosmic"] #cx-aurora,html[data-theme="cosmic"] .ring-stage::before,html[data-theme="cosmic"] .ring-stage::after{animation:none!important}
+  html[data-theme="cosmic"] .tab-pane.active>*,html[data-theme="cosmic"] .lib-wrap>*,html[data-theme="cosmic"] .fa-list>*,html[data-theme="cosmic"] .notes-grid>*,html[data-theme="cosmic"] .task-list>*{animation:none!important}
+}
+
+html[data-theme="cosmic"] .dpanel{background-color:var(--zd-inner,rgba(36,30,86,.32))!important;-webkit-backdrop-filter:blur(12px) saturate(150%);backdrop-filter:blur(12px) saturate(150%);border-color:var(--cx-edge)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 4px 18px rgba(4,3,18,.35)}

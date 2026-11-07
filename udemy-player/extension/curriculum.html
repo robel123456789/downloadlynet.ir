@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Curriculum</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="theme.css">
+<script src="theme.js"></script><script src="colors.js"></script>
+<link rel="stylesheet" href="player.css">
+<link rel="stylesheet" href="library.css">
+<link rel="stylesheet" href="nav.css">
+<link rel="stylesheet" href="curriculum.css">
+<link rel="stylesheet" href="dark.css">
+<link rel="stylesheet" href="cosmic.css">
+</head>
+<body class="lib">
+<header class="nav">
+  <img class="logo-img" src="logo-mark.png" alt="">
+  <div class="brand">udemy player</div>
+  <div class="vr"></div>
+  <div class="ctitle">Curriculum</div>
+  <div class="sp"></div>
+  <span id="saveStatus" class="save-status" role="status" aria-live="polite"></span>
+  <span id="backupInfo" class="backup-info"></span>
+  <button id="exportBtn" class="btn small" title="Download a backup file">⬇ Backup</button>
+  <button id="importBtn" class="btn small" title="Restore from a backup file">⬆ Restore</button>
+  <input id="importFile" type="file" accept=".json,application/json" hidden>
+  <button id="toLib" class="btn small">📚 Library</button>
+  <button class="themebtn" data-theme-toggle aria-label="Toggle theme"></button>
+  <button id="addTable" class="btn small primary">+ Add table</button>
+</header>
+
+<div class="cur-toolbar">
+  <input id="curSearch" type="search" placeholder="Search all tables…  ( / )" autocomplete="off">
+  <label class="cur-tgl"><input type="checkbox" id="hideDone"> Hide done</label>
+  <div class="sp"></div>
+  <div class="cur-overall"><div class="cur-bar"><i id="ovBar"></i></div><span id="ovTxt"></span></div>
+  <button id="importTxt" class="btn small" title="Import a table from Markdown, CSV or Excel paste">⤓ Import table</button>
+  <button id="printBtn" class="btn small" title="Print / save as PDF">🖨 Print</button>
+</div>
+
+<main class="cur-main" id="curMain">
+  <!-- tables render here -->
+</main>
+
+<div id="toast" class="toast" hidden></div>
+<div id="undoToast" class="undo-toast" hidden><span id="undoMsg"></span><button id="undoBtn" class="btn small">Undo</button></div>
+
+<script src="zd-link.js"></script>
+<script src="curriculum.js"></script>
+</body>
+</html>

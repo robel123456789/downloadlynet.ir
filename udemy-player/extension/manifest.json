@@ -1,0 +1,27 @@
+{
+ "manifest_version": 3,
+ "name": "udemy player",
+ "version": "8.0",
+ "minimum_chrome_version": "109",
+ "description": "udemy player: offline course library (with player, RAR extraction and subtitle merging) and the Curriculum builder.",
+ "permissions": [
+  "storage",
+  "unlimitedStorage",
+  "nativeMessaging"
+ ],
+ "action": {
+  "default_popup": "popup.html",
+  "default_title": "udemy player",
+  "default_icon": {
+   "16": "i16.png",
+   "48": "i48.png",
+   "128": "i128.png"
+  }
+ },
+ "icons": {
+  "16": "i16.png",
+  "48": "i48.png",
+  "128": "i128.png"
+ },
+ "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoDUMLWUPg16yzTEnURHLVvqH+Eba326pc26q2TOlQh6qiIvK4MJrNKPUOPOvpnQJBHJolnbyNAt97MbWwcLe7ozpZiRnX3M6Kb22RY/3GUzYFjFQlw1+G+f7lvmSCHU0v5TlTTyAD3b66PNYK35tZta3QR7TsXC7G7o3xyFhSKJdoR7DZ9yYSHboE+khjVLcnWB8laJ9oq2dyU/BTyFTdnzUIiFlTgtBnH6d7nEKtkZ6LNMkldFUIDmWkQGW+7LWq3FElh/AcDI7QR87r6alY2I3JUF9jr1U1QhvlrhjnhEbtZHZega3V2JvEIZDzvi1FgtIJccPKsVvnbX75fuM/wIDAQAB"
+}

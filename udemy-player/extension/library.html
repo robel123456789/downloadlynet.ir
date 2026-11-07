@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>udemy player - Library</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="theme.css">
+<script src="theme.js"></script><script src="colors.js"></script>
+<link rel="stylesheet" href="player.css">
+<link rel="stylesheet" href="library.css">
+<link rel="stylesheet" href="nav.css">
+<link rel="stylesheet" href="merge.css">
+<link rel="stylesheet" href="dark.css">
+<link rel="stylesheet" href="cosmic.css">
+</head>
+<body class="lib">
+<header class="nav">
+  <img class="logo-img" src="logo-mark.png" alt="">
+  <div class="brand">udemy player</div>
+  <div class="vr"></div>
+  <div class="ctitle">Course library</div>
+  <div class="sp"></div>
+  <label class="search"><span data-ico="search" data-sz="18"></span><input id="q" placeholder="Search courses or categories"></label>
+  <button id="extractBtn" class="btn small" title="Extract multi-part or split WinRAR archives (.part1.rar, .rar+.r00, ...) found in a folder">Extract RAR</button>
+  <button id="chkBtn" class="btn small" title="Re-read every video length from scratch and show a report">Check lengths</button>
+  <button id="mergeBtn" class="btn small" title="Merge video + subtitle files into .mkv">Merge subtitles</button>
+  <button id="importBtn" class="btn small">Import folders</button>
+  <button id="toCurr" class="btn small">📖 Curriculum</button>
+  <button class="themebtn" data-theme-toggle aria-label="Toggle theme"></button>
+  <button id="addBtn" class="btn small primary">+ Add course</button>
+</header>
+<div class="layout" id="layout">
+  <aside id="aside">
+    <div class="side-h"><b style="padding:16px 0;font-size:16px">Categories</b><div class="sp"></div><button id="addCat" class="ib" title="New category" style="font-size:22px">+</button></div>
+    <div id="cats"></div>
+  </aside>
+  <main id="main"><div class="lib-wrap" id="lib"></div></main>
+</div>
+<div id="modal" class="modal" hidden><div class="mbox"><div class="mh"><b id="mtitle"></b><button id="mclose" class="ib" data-ico="close" data-sz="22"></button></div><div id="mbody"></div></div></div>
+<div id="toast" class="toast" hidden></div>
+<script src="zd-link.js"></script>
+<script src="nav.js"></script>
+<script src="dur.js"></script>
+<script src="library.js"></script>
+<script src="merge.js"></script><script src="extract.js"></script>
+<script src="cosmic.js"></script>
+</body>
+</html>

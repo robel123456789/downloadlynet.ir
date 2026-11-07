@@ -1,0 +1,15 @@
+/* styles for popup.html (the file was referenced but missing) — same dark/neon variables as app.css */
+:root{--bg:#080810;--surface:#0f0f1a;--card:#16162a;--card2:#1e1e35;--line:rgba(var(--zd-acc-rgb,110,86,255),.18);--ac:var(--zd-acc,#6e56ff);--glow:rgba(var(--zd-acc-rgb,110,86,255),.4);--ok:var(--zd-ok,#00f5b4);--red:var(--zd-err,#ff5f72);--wn:var(--zd-warn,#ffd166);--tx:#eeeeff;--mu:#6868a0;--fh:'Syne','Segoe UI','Noto Sans Ethiopic',sans-serif;--fm:'JetBrains Mono',Consolas,'Noto Sans Ethiopic',monospace}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:13px var(--fh)}
+.mu{color:var(--mu)}input{width:100%;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:8px 10px;color:inherit;font:inherit;outline:none}
+input:focus{border-color:var(--ac)}button{cursor:pointer;background:var(--ac);border:0;border-radius:8px;padding:8px 12px;font:inherit;font-weight:600;color:#fff}
+button.ghost{background:transparent;border:1px solid var(--line);color:var(--mu)}button.ghost:hover{color:var(--tx)}
+.prog{height:5px;background:var(--line);border-radius:3px;overflow:hidden;margin:6px 0}.prog i{display:block;height:100%;background:var(--ok);transition:width .2s}
+.tasks{list-style:none;padding:0;margin:8px 0;display:grid;gap:5px}.tasks li{display:flex;gap:8px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:2px 6px 2px 10px}
+.tasks li input[type=text]{border:0;background:transparent;padding:6px 4px}.tasks li.done input[type=text]{text-decoration:line-through;color:var(--mu)}
+.tasks input[type=checkbox]{width:16px;height:16px;flex:none;padding:0;accent-color:var(--ok)}.x{background:transparent;color:var(--mu);padding:2px 8px;font-size:16px}
+.add{display:flex;gap:6px;margin-top:8px}.add input[type=time]{width:100px;flex:none}.add button{flex:none}
+#ft{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin-bottom:12px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+#ft b{font-family:var(--fh);font-size:34px;font-weight:800;line-height:1;font-variant-numeric:tabular-nums}
+#ft small{display:block;font-size:11px;color:var(--mu);margin-top:3px}
+#ft.run b{color:var(--ok)}#ft.brk b{color:var(--wn)}

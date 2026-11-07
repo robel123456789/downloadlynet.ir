@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>udemy player</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="theme.css">
+<script src="theme.js"></script><script src="colors.js"></script>
+<link rel="stylesheet" href="player.css">
+<link rel="stylesheet" href="nav.css">
+<link rel="stylesheet" href="dark.css">
+<link rel="stylesheet" href="cosmic.css">
+</head>
+<body>
+<section id="welcome">
+  <div class="wcard">
+    <img class="wlogo" src="logo-full.png" alt="udemy player">
+    <h1>Allow access to this course</h1>
+    <p>Chrome asks for permission to read this folder once per browser session. Click below to continue.</p>
+    <button id="cont" class="btn primary" hidden>Open <b id="contName"></b></button>
+    <a class="btn" href="library.html">Back to library</a>
+    <div id="werr" class="werr"></div>
+  </div>
+</section>
+
+<div id="app" hidden>
+  <header class="nav">
+    <a class="home" href="library.html" title="Back to library"><img class="logo-img" src="logo-mark.png" alt=""><div class="brand">udemy player</div></a>
+    <a class="navlink" href="library.html">&lsaquo; Library</a>
+    <div class="vr"></div>
+    <div id="ctitle" class="ctitle"></div>
+    <div class="sp"></div>
+    <div class="prog" id="prog" tabindex="0">
+      <svg width="34" height="34" viewBox="0 0 36 36"><circle class="ring-bg" cx="18" cy="18" r="15"/><circle id="ring" class="ring" cx="18" cy="18" r="15"/></svg>
+      <span>Your progress</span><span data-ico="chev" data-sz="18"></span>
+      <div class="pop"><div id="popTxt"></div><div class="muted" style="font-size:12px">Lectures are marked complete at 90% watched.</div></div>
+    </div>
+    <button class="themebtn" data-theme-toggle aria-label="Toggle theme"></button>
+    <div class="menu"><button id="more" class="btn small sq" title="More"><span data-ico="more" data-sz="20"></span></button>
+      <div id="mmenu" class="mpop right" hidden><button data-m="folder">Back to library</button><button data-m="reset">Reset progress</button></div></div>
+  </header>
+
+  <div class="layout" id="layout">
+    <main id="main">
+      <div id="stage">
+        <div id="vw">
+          <video id="v" playsinline></video>
+          <div id="vtitle" class="vtitle"></div>
+          <div id="caps" class="caps"></div>
+          <div id="verr" class="verr" hidden></div>
+          <button id="openSide" class="edge top" title="Course content" hidden></button>
+          <button id="prevL" class="edge mid l" title="Previous lecture (Shift+P)"></button>
+          <button id="nextL" class="edge mid r" title="Next lecture (Shift+N)"></button>
+          <div id="upnext" class="upnext" hidden>
+            <div class="un-in"><div class="un-k">Up next</div><div id="unT" class="un-t"></div>
+            <div class="un-b"><button id="unPlay" class="btn primary">Play now (<span id="unC">5</span>)</button><button id="unX" class="btn">Cancel</button></div></div>
+          </div>
+          <div id="big" class="big-play" hidden><span data-ico="play" data-sz="52"></span></div>
+          <div id="ctrl" class="ctrl">
+            <div id="bar" class="bar"><div id="buf"></div><div id="played"></div><div id="knob"></div></div>
+            <div class="crow">
+              <button id="pp" class="ib" title="Play/Pause (k)"></button>
+              <button id="back" class="ib sk" title="Back 5s"></button>
+              <div class="menu"><button id="rate" class="ratebox">1x</button><div id="rmenu" class="mpop" hidden></div></div>
+              <button id="fwd" class="ib sk r" title="Forward 5s"></button>
+              <span id="time" class="time">0:00 / 0:00</span>
+              <button id="addnote" class="ib" title="Add note at this moment"></button>
+              <div class="sp"></div>
+              <button id="mute" class="ib" title="Mute (m)"></button>
+              <input id="vol" type="range" min="0" max="1" step="0.05" value="1">
+              <button id="resb" class="ib" title="Resources"></button>
+              <button id="cc" class="ib" title="Captions (c)"></button>
+              <div class="menu"><button id="gear" class="ib" title="Settings"></button><div id="gmenu" class="mpop right" hidden></div></div>
+              <button id="fs" class="ib" title="Fullscreen (f)"></button>
+              <button id="side" class="ib" title="Show / hide course content"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav class="tabs" id="tabs">
+        <button data-t="search" class="ib sq" title="Search lectures"></button>
+        <button data-t="content" id="tabContent" hidden>Course content</button>
+        <button data-t="overview" class="on">Overview</button>
+        <button data-t="notes">Notes</button>
+        <button data-t="tools">Learning tools</button>
+      </nav>
+      <div id="panel" class="panel"></div>
+    </main>
+    <aside id="aside">
+      <div class="side-h">
+        <div class="stabs" id="stabs"><button data-st="toc" class="on">Course content</button><button data-st="tr">Transcript</button></div>
+        <div class="sp"></div>
+        <button id="sclose" class="ib" title="Close"></button>
+      </div>
+      <div id="sbody"><div id="toc"></div><div id="trans" hidden></div></div>
+      </aside>
+  </div>
+</div>
+<div id="modal" class="modal" hidden><div class="mbox"><div class="mh"><b id="mtitle">Resources</b><button id="mclose" class="ib" data-ico="close" data-sz="22"></button></div><div id="mbody"></div></div></div>
+<div id="toast" class="toast" hidden></div>
+<script src="nav.js"></script>
+<script src="dur.js"></script>
+<script src="player.js"></script>
+<script src="cosmic.js"></script>
+</body>
+</html>

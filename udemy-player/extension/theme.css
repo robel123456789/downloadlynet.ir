@@ -1,0 +1,31 @@
+/* udemy player theme tokens (dark default). Themes: dark | cosmic — see theme.js */
+@font-face{font-family:"Outfit";font-weight:400;font-display:swap;src:url(fonts/outfit-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"Outfit";font-weight:500;font-display:swap;src:url(fonts/outfit-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:"Outfit";font-weight:600;font-display:swap;src:url(fonts/outfit-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:"Outfit";font-weight:700;font-display:swap;src:url(fonts/outfit-latin-700-normal.woff2) format("woff2")}
+@font-face{font-family:"Outfit";font-weight:800;font-display:swap;src:url(fonts/outfit-latin-800-normal.woff2) format("woff2")}
+@font-face{font-family:"DM Serif Display";font-weight:400;font-display:swap;src:url(fonts/dm-serif-display-latin-400-normal.woff2) format("woff2")}
+
+:root{
+  --bg-base:#0a0a0c;--bg-elevated:#131316;--bg-surface:#1c1c20;--bg-surface-2:#26262b;
+  --text-primary:#f5f5f7;--text-secondary:#b4b4bb;--text-muted:#7a7a83;--text-inverse:#0a0a0c;
+  --border-default:rgba(255,255,255,.09);--border-strong:rgba(255,255,255,.16);
+  --btn-primary-bg:#ffffff;--btn-primary-text:#0a0a0c;--btn-primary-bg-hover:#e4e4e7;
+  --btn-secondary-bg:transparent;--btn-secondary-text:#f5f5f7;--btn-secondary-border:rgba(255,255,255,.18);
+  --glass-bg:rgba(20,20,24,.55);--glass-bg-strong:rgba(14,14,17,.75);--glass-border:rgba(255,255,255,.10);
+  --glass-highlight:rgba(255,255,255,.06);--glass-blur:16px;--glass-shadow:0 8px 32px rgba(0,0,0,.45);
+  --color-success:var(--zd-ok,#34d399);--color-error:var(--zd-err,#f87171);--color-warning:var(--zd-warn,#fbbf24);
+  --ring-color:rgba(255,255,255,.35);
+  --font-sans:"Outfit",system-ui,-apple-system,"Segoe UI",sans-serif;--font-serif:"DM Serif Display",Georgia,serif;
+  --hover:rgba(255,255,255,.07);--scrim:rgba(0,0,0,.72);
+  color-scheme:dark;
+}
+
+.glass{background-color:var(--glass-bg);backdrop-filter:blur(var(--glass-blur)) saturate(160%);-webkit-backdrop-filter:blur(var(--glass-blur)) saturate(160%);border:1px solid var(--glass-border);box-shadow:inset 0 1px 0 0 var(--glass-highlight),var(--glass-shadow)}
+.glass-strong{background-color:var(--glass-bg-strong);backdrop-filter:blur(calc(var(--glass-blur) + 8px)) saturate(180%);-webkit-backdrop-filter:blur(calc(var(--glass-blur) + 8px)) saturate(180%);border:1px solid var(--glass-border);box-shadow:inset 0 1px 0 0 var(--glass-highlight),var(--glass-shadow)}
+
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes slideInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+@keyframes pulse-soft{0%,100%{opacity:1}50%{opacity:.7}}
+.animate-fade-in{animation:fadeIn .4s ease-out forwards}
+.animate-pulse-soft{animation:pulse-soft 2s ease-in-out infinite}
